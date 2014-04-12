@@ -1,0 +1,19 @@
+.middle {
+	padding-top: 5%;
+}
+.likes {
+	background: #ccc;
+	color: #fff;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	height: 30%;
+}
+.info {
+	background: #ccc;
+	color: #fff;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	height: 50%;
+}
