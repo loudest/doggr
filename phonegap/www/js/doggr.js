@@ -1,3 +1,5 @@
+var counter = 1;
+
 function set(selector, value) {
 	console.debug( value );
 	$( "#debug" ).html( value );
@@ -24,6 +26,11 @@ $( document ).ready(function() {
 	$( "#no_img" ).click(function() {
 		string = "Handler for NO called.";
 	  	set( "no_img", string );
+		
+		/* THIS SHOULD NOT BE STUCK IN THIS LOOP. Use for 'YES' and 'NO'. */
+		string img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
+		$( "#profile_img" ).attr('src', img_str);
+		counter++; 		
 	});
 
 	$( "#info_img" ).click(function() {
