@@ -3,7 +3,7 @@
 
 function set(selector, value) {
 	console.debug( value );
-	$( "#debug" ).htmlz( value );
+	$( "#debug" ).html( value );
 }
 
 $( document ).ready(function() {
