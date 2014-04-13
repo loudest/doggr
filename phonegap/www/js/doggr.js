@@ -1,4 +1,5 @@
-var counter = 1;
+/* I need to be able to make a PARSE call from here. */
+
 
 function set(selector, value) {
 	console.debug( value );
@@ -22,15 +23,19 @@ function get_location() {
 $( document ).ready(function() {
 	console.debug( "App load" );
 	get_location();
-
+	
+	counter = 1;
+	img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
+	function next_image(){
+		img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
+		$( "#profile_img" ).attr('src', img_str);
+		counter++;
+	}
+	
 	$( "#no_img" ).click(function() {
 		string = "Handler for NO called.";
 	  	set( "no_img", string );
-		
-		/* THIS SHOULD NOT BE STUCK IN THIS LOOP. Use for 'YES' and 'NO'. */
-		string img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
-		$( "#profile_img" ).attr('src', img_str);
-		counter++; 		
+		next_image(); 		
 	});
 
 	$( "#info_img" ).click(function() {
@@ -40,6 +45,7 @@ $( document ).ready(function() {
 
 	$( "#yes_img" ).click(function() {
 		string = "Handler for YES called.";
-	  	set( "yes_img", string); 
+	  	set( "yes_img", string);
+		next_image();
 	});
 });
