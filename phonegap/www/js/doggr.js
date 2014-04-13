@@ -37,7 +37,6 @@ $( document ).ready(function() {
 
 	/** update picture bindings */
 	counter = 1;
-	img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
 	function next_image(){
 		if(counter < 22	) {
 			counter = Math.floor((Math.random()*22)+1);;
@@ -66,4 +65,6 @@ $( document ).ready(function() {
 	  	set( "yes_img", string);
 		next_image();
 	});
+
+	next_image();
 });
