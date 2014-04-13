@@ -3,23 +3,25 @@ function set(selector, value) {
 	$( "#debug" ).html( value );
 }
 
-function success_location() {
-	string = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-	set( "loading", string );
-}
-
-function failed_location() {
-	string = "No locations";
-	set( "loading", string );
-}
-
-function get_location() {
-	navigator.geolocation.getCurrentPosition(success_location, failed_location);
-}
-
 $( document ).ready(function() {
 	console.debug( "App load" );
-	get_location();
+
+  	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(found_location, no_location);
+  	} else {
+  		no_location();
+  	}
+
+	function found_location(position) {
+		string = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+		set( "loading", string );
+	}
+
+	function no_location() {
+		string = "No location service";	
+		set( "loading", string );
+
+	}
 
 	$( "#no_img" ).click(function() {
 		string = "Handler for NO called.";
