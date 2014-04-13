@@ -8,6 +8,9 @@ function set(selector, value) {
 
 $( document ).ready(function() {
 	console.debug( "App load" );
+	if(navigator.notification) {
+		navigator.notification.vibrate();
+	}
 
     //var mapCanvas = document.getElementById('map_canvas');
     //var mapOptions = {
