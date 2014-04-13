@@ -6,20 +6,21 @@ function set(selector, value) {
 	$( "#debug" ).html( value );
 }
 
-function success_location() {
-	string = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-	set( "loading", string );
-}
+$( document ).ready(function() {
+	console.debug( "App load" );
 
-function failed_location() {
-	string = "No locations";
-	set( "loading", string );
-}
+  	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(found_location, no_location);
+  	} else {
+  		no_location();
+  	}
 
-function get_location() {
-	navigator.geolocation.getCurrentPosition(success_location, failed_location);
-}
+	function found_location(position) {
+		string = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+		set( "loading", string );
+	}
 
+<<<<<<< HEAD
 $( document ).ready(function() {
 	console.debug( "App load" );
 	get_location();
@@ -32,6 +33,14 @@ $( document ).ready(function() {
 		counter++;
 	}
 	
+=======
+	function no_location() {
+		string = "No location service";	
+		set( "loading", string );
+
+	}
+
+>>>>>>> 25b7c4d8d3268087e69fa16453ae929de0b95f3c
 	$( "#no_img" ).click(function() {
 		string = "Handler for NO called.";
 	  	set( "no_img", string );
