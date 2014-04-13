@@ -18,6 +18,7 @@ $( document ).ready(function() {
 
 	function found_location(position) {
 		string = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+	    $( "#map-canvas" ).html( value ) = "https://maps.googleapis.com/maps/api/staticmap?center="+ position.coords.latitude +","+ position.coords.longitude +"&amp;zoom=11&amp;size=300x300&amp;sensor=false&amp;";
 		set( "loading", string );
 	}
 
