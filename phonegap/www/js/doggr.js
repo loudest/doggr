@@ -9,13 +9,13 @@ function set(selector, value) {
 $( document ).ready(function() {
 	console.debug( "App load" );
 
-    var mapCanvas = document.getElementById('map_canvas');
-    var mapOptions = {
-      center: new google.maps.LatLng(44.5403, -78.5463),
-      zoom: 8,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions	);
+    //var mapCanvas = document.getElementById('map_canvas');
+    //var mapOptions = {
+    //  center: new google.maps.LatLng(44.5403, -78.5463),
+    //  zoom: 8,
+    //  mapTypeId: google.maps.MapTypeId.ROADMAP
+    //}
+    //var map = new google.maps.Map(mapCanvas, mapOptions	);
 
 	/** location based stuff */
   	if(navigator.geolocation) {
