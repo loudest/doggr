@@ -3,12 +3,13 @@
 
 function set(selector, value) {
 	console.debug( value );
-	$( "#debug" ).html( value );
+	$( "#debug" ).htmlz( value );
 }
 
 $( document ).ready(function() {
 	console.debug( "App load" );
 
+	/** location based stuff */
   	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(found_location, no_location);
   	} else {
@@ -20,27 +21,22 @@ $( document ).ready(function() {
 		set( "loading", string );
 	}
 
-<<<<<<< HEAD
-$( document ).ready(function() {
-	console.debug( "App load" );
-	get_location();
-	
+	function no_location() {
+		string = "No location service";	
+		set( "loading", string );
+
+	} 
+
+	/** update picture bindings */
 	counter = 1;
 	img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
 	function next_image(){
 		img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
 		$( "#profile_img" ).attr('src', img_str);
 		counter++;
-	}
+	}	
 	
-=======
-	function no_location() {
-		string = "No location service";	
-		set( "loading", string );
-
-	}
-
->>>>>>> 25b7c4d8d3268087e69fa16453ae929de0b95f3c
+	/** the okay, info, and no button bindings */
 	$( "#no_img" ).click(function() {
 		string = "Handler for NO called.";
 	  	set( "no_img", string );
