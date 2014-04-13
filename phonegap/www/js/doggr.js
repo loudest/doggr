@@ -66,5 +66,7 @@ $( document ).ready(function() {
 		next_image();
 	});
 
+	$( "#profile_img").draggable({ snap: true });
+
 	next_image();
 });
