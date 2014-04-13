@@ -9,7 +9,7 @@ function set(selector, value) {
 $( document ).ready(function() {
 	console.debug( "App load" );
 	if(navigator.notification) {
-		navigator.notification.vibrate();
+		navigator.notification.vibrate(10);
 	}
 
     //var mapCanvas = document.getElementById('map_canvas');
