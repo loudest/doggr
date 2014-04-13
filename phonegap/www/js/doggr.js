@@ -39,8 +39,8 @@ $( document ).ready(function() {
 	counter = 1;
 	img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
 	function next_image(){
-		if(counter < 13) {
-			counter++;
+		if(counter < 22	) {
+			counter = Math.floor((Math.random()*22)+1);;
 		} else {
 			counter = 1;
 		}
@@ -51,18 +51,18 @@ $( document ).ready(function() {
 	
 	/** the okay, info, and no button bindings */
 	$( "#no_img" ).click(function() {
-		string = "Handler for NO called.";
+		string = "NO - NO THANKS";
 	  	set( "no_img", string );
 		next_image(); 		
 	});
 
 	$( "#info_img" ).click(function() {
-		string = "Handler for INFO called.";
+		string = "PROFILE INFO.";
 	  	set( "info_img", string );
 	});
 
 	$( "#yes_img" ).click(function() {
-		string = "Handler for YES called.";
+		string = "YES - TOO CUTE!";
 	  	set( "yes_img", string);
 		next_image();
 	});
