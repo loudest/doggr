@@ -21,9 +21,6 @@
 	-ms-filter:"alpha(opacity=70)";
 	filter:alpha(opacity=70);
 }
-#profile_img {
-	height: 400px;
-}
 .middle {
 	padding-top: 5%;
 	text-align: center;
@@ -46,3 +43,11 @@
 	-webkit-border-radius: 10px;
 	height: 50%;
 }
+#map_canvas {
+        height: 400px;
+        width: 400px;
+}
+#profile_img {
+	height: 400px;
+}
+

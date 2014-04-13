@@ -9,6 +9,14 @@ function set(selector, value) {
 $( document ).ready(function() {
 	console.debug( "App load" );
 
+    var mapCanvas = document.getElementById('map_canvas');
+    var mapOptions = {
+      center: new google.maps.LatLng(44.5403, -78.5463),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions	);
+
 	/** location based stuff */
   	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(found_location, no_location);
@@ -18,7 +26,6 @@ $( document ).ready(function() {
 
 	function found_location(position) {
 		string = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-	    $( "#map-canvas" ).html( value ) = "https://maps.googleapis.com/maps/api/staticmap?center="+ position.coords.latitude +","+ position.coords.longitude +"&amp;zoom=11&amp;size=300x300&amp;sensor=false&amp;";
 		set( "loading", string );
 	}
 
