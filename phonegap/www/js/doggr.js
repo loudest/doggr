@@ -31,9 +31,14 @@ $( document ).ready(function() {
 	counter = 1;
 	img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
 	function next_image(){
-		img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';
+		if(counter < 13) {
+			counter++;
+		} else {
+			counter = 1;
+		}
+
+		img_str = 'https://s3-us-west-2.amazonaws.com/dog-tinder/dog' + counter.toString() +  '.jpg';		
 		$( "#profile_img" ).attr('src', img_str);
-		counter++;
 	}	
 	
 	/** the okay, info, and no button bindings */
